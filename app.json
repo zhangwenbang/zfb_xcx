@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/record_detail/record_detail",
+    "pages/pay/pay",
+     "pages/login/login",
+    "pages/record/record",
+    "pages/person/person",
+    "pages/pay_success/pay_success"
+  ],
+  "window": {
+    "defaultTitle": "My App"
+  },
+  "tabBar":{
+    "textColor":"#5c5c5c",
+    "selectedColor": "#ff7c2e",
+    "backgroundColor": "#F5F5F9",
+    "items":[
+       {
+        "pagePath": "pages/index/index",
+        "icon": "images/icon_1_h.png",
+        "activeIcon": "images/icon_1_n.png",
+        "name": "首页"
+      },
+      {
+        "pagePath":"pages/person/person",
+        "icon": "images/icon_3_h.png",
+        "activeIcon": "images/icon_3_n.png",
+        "name": "我的"
+      }
+     
+    ]
+  }
+}

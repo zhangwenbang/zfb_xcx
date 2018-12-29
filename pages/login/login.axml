@@ -1,0 +1,35 @@
+<view style="width:100%;" class="body">
+  <view class="l_tishi clearAfter">
+    <image class="l_icon" src="../../images/icon_CB2x.png" />
+    <view class="l_con">
+      <view class="l_t01">手机快捷登录</view>
+      <view class="l_t02">未注册手机验证登录后自动创建橙牛账号</view>
+    </view>
+  </view>
+  <view class="inputBlock">
+    <view class="inputWrap">    
+      <input class="iw_input" onInput="bindKeyInputTel" placeholder="请输入手机号" />
+    </view>
+    <view class="inputWrap">
+      <input class="iw_input" onInput="bindKeyInputYz" placeholder="请输入验证码" />
+      <view a:if="{{sCodeBtn}}" onTap="yzm" class="yzm" >获取验证码</view>
+      <view a:else class="yzm">{{curCount}}秒后重新发送</view>
+    </view>
+    <view class="wxts">温馨提示：登录即表示同意：<text class="sm">《用户协议即隐私声明》</text></view>
+    <view class="sunbmit" onTap="loginBtn">登录</view>
+  </view>
+
+  <view class="vCodePomp" a:if="{{isVCode}}">
+      <view class="vCodeInner">
+        <view class="vC_title">{{vCodeText?"图形验证码":"图形验证码错误！"}}</view>
+        <view class="vC_prtin clearAfter">
+          <input class="validate"  onInput="bindKeyInputVCode"  value="{{vCode}}" name="vCode" placeholder="请输入验证码" type="text" />
+          <image class="vC_tuxing" src="{{vCodeImg}}" onTap="updateCode" />
+        </view>
+        <view class="btnWrap">
+          <view class="pv-right-btn" onTap="vCodeOk">确定</view>
+          <view class="pv-left-btn" onTap="vCodeCancel">取消</view>
+        </view>
+      </view>
+  </view>
+</view>

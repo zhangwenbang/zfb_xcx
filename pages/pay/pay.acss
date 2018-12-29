@@ -1,0 +1,58 @@
+page{
+  background: #f7f7f7;
+}
+.body{
+  padding-bottom: 120rpx;
+}
+.orderInfo{
+  background: #ffffff;
+  padding: 29rpx;
+  text-align: center;
+}
+.o_p1{
+  font-size: 26rpx;
+  line-height: 32rpx;
+}
+.o_p2{
+  padding:28rpx 0;
+  font-size: 55rpx;
+  line-height:70rpx;
+
+}
+.o_p3{
+  padding: 6rpx 0;
+  font-size: 27rpx;
+  line-height:32rpx;
+
+}
+.o_p4{
+  padding: 6rpx 0;
+  color: #9a9a9a;
+  font-size: 27rpx;
+  line-height:32rpx;
+
+}
+.o_p5{
+  padding: 6rpx 0;
+  color: #ff4d4b;
+  font-size: 27rpx;
+  line-height:32rpx;
+
+}
+.payBtn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 108rpx;
+  background: #fd7e2d;
+  font-size: 28rpx;
+  color: #ffffff;
+  text-align: center;
+  line-height: 108rpx;
+}
+.payBtn .tt_p{
+  display: inline-block;
+  padding-left: 14rpx;
+  font-size: 32rpx;
+}

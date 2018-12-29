@@ -1,0 +1,96 @@
+page{
+  background: #f7f7f7;
+}
+
+.h_info{
+  padding: 30rpx;
+  background: #ffffff;
+}
+.h_left{
+  float: left;
+  padding: 25rpx 0;
+}
+.h_img{
+  width: 50rpx;
+  height: 50rpx;
+  float:left;
+}
+.h_text{
+  font-size: 30rpx;
+  line-height: 50rpx;
+  float:left;
+  display: inline-block;
+  padding-left: 16rpx;
+}
+.h_right{
+  float: right;
+}
+
+.h_icon{
+  width: 120rpx;
+  height: 100rpx;
+}
+.m_info{
+  margin-top: 16rpx;
+  background: #ffffff;
+  padding: 30rpx;
+}
+.m_title{
+  font-size: 26rpx;
+  line-height: 32rpx;
+}
+
+.m_shop{
+  font-size: 26rpx;
+  line-break: 32rpx;
+  padding-top: 20rpx;
+  color: #999999;
+}
+.m_btn{
+  padding:40rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.m_b{
+  width: 45%;
+  height: 80rpx;
+  border: 1px solid #f96c10;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  color:#f96c10;
+  border-radius: 80rpx;
+  text-align: center;
+}
+.m_b_left{
+  float: left;
+}
+.m_b_right{
+  float: right;
+}
+.qm_info{
+  background: #ffffff;
+  padding: 20rpx 30rpx 50rpx;
+  text-align: center;
+}
+.qm_red{
+  color: #fe4c4a;
+  font-size: 24rpx;
+  line-height: 32rpx;
+}
+
+.qm_text{
+  font-size: 24rpx;
+  color: #999999;
+  line-break: 32rpx;
+  padding: 10rpx 0;
+}
+.qm_code{
+  /* padding: 40rpx 0; */
+  height: 350rpx;
+}
+.qm_img{
+  width:350rpx;
+  height: 350rpx;
+}
+.qm_t{
+  color: #000000;
+}

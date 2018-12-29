@@ -1,0 +1,160 @@
+page{
+  background: #f7f7f7;
+}
+
+.h_info{
+  height:98rpx;
+  line-height: 98rpx;
+  padding: 0 30rpx;
+  background: #fafafa;
+}
+.h_left{
+  float: left;
+  font-size: 32rpx;
+  line-height: 98rpx;
+  color: #ff7e2d;
+}
+
+.h_right{
+  float: right;
+  font-size: 32rpx;
+  line-height: 98rpx;
+  color: #ff4d4f;
+}
+.record_in{
+  padding: 0 30rpx;
+  background: #ffffff;
+}
+.r_t{
+  height: 70rpx;
+  position: relative;
+}
+.r_t_l{
+  float: left;
+  padding-top: 20rpx;
+  padding-right: 188rpx;
+}
+.r_t_img{
+  float: left;
+  width: 26rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.r_t_tt{
+  float: left;
+  font-size: 24rpx;
+  line-height: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.r_t_r{
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+  font-size: 24rpx;
+  line-height: 26rpx;
+}
+.r_con{
+  height: 140rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f3f3f3;
+}
+.r_con_img{
+  float: left;
+  width: 200rpx;
+  height: 140rpx;
+}
+.r_c_f{
+  float: left;
+  width: 485rpx;
+  height: 140rpx;
+  position: relative;
+}
+.r_c_f01{
+  padding-left: 26rpx;
+  padding-top: 30rpx;
+}
+.r_f01_l{
+  float: left;
+  font-size: 24rpx;
+  line-break: 32rpx;
+  width: 300rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.r_f01_r{
+  float: right;
+  font-size: 24rpx;
+  line-height: 32rpx;
+}
+.r_c_f02{
+  padding-top: 12rpx;
+  padding-left: 26rpx;
+  color: #757575;
+  font-size: 18rpx;
+  line-height: 32rpx;
+}
+.r_dd{
+  height: 54rpx;
+  line-height: 54rpx;
+}
+.r_dd_l{
+  float:left;
+  font-size: 24rpx;
+}
+.r_dd_r{
+  float:right;
+  font-size: 24rpx;
+}
+.qm_info{
+  margin-top: 14rpx;
+  background: #ffffff;
+  padding: 20rpx 30rpx 50rpx;
+  text-align: center;
+}
+.qm_red{
+  color: #fe4c4a;
+  font-size: 24rpx;
+  line-height: 32rpx;
+}
+.qm_text{
+  font-size: 24rpx;
+  color: #999999;
+  line-break: 32rpx;
+  padding: 10rpx 0;
+}
+.qm_code{
+  /* padding: 40rpx 0; */
+  height: 350rpx;
+  text-align: center;
+}
+.qm_img{
+  width:350rpx;
+  height: 350rpx;
+}
+.qm_t{
+  color: #000000;
+}
+.d_wrap{
+  margin-top: 14rpx;
+  background: #ffffff;
+  padding: 0 30rpx;
+}
+.d_ele{
+  line-height: 54rpx;
+  font-size: 24rpx;
+}
+.b_wrap{
+  padding: 30rpx;
+}
+.b_btn{
+  float: right;
+  padding: 14rpx 55rpx;
+  color: #8b8b8b;
+  border: 1px solid #8b8b8b;
+  border-radius: 58rpx;
+  font-size: 27rpx;
+  line-height: 27rpx;
+}

@@ -1,0 +1,227 @@
+<view class="body">
+  <view class="top-tab clearAfter">
+    <view  a:for="{{navList}}" key="{{item}}" onTap="navTap" data-index="{{index}}" class="navli {{index==navListCuIndex?'active':''}}">
+      <text>{{item.name}}</text>
+    </view>
+   
+  </view>
+  <view class="swiper-box">
+
+    <view a:if="{{navListCuIndex=='0'}}">
+      <view a:if="{{list.length>0}}">
+        <view a:for="{{list}}" key="{{item}}" class="record_ele">
+          <!-- 内容 -->
+          <view class="record_in">
+            <view class="r_t clearAfter">
+              <view class="r_t_l clearAfter">
+                <image class="r_t_img" src="../../images/sp2x.png" />
+                <view class="r_t_tt">{{item.ename}}</view>
+              </view>
+              <view class="r_t_r">{{item.status=='0'?'待付款':(item.status=='1')?'可使用':(item.status=='5')?'已消费':(item.status=='6')?'已过期':(item.status=='7')?'已退款':'未知状态'}}</view>
+            </view>
+            <view class="r_con clearAfter">
+              <image class="r_con_img" src="{{item.imgicon?item.imgicon:'../../images/img2x.jpg'}}" />              
+              <view class="r_c_f">
+                <view class="r_c_f01 clearAfter">
+                  <view class="r_f01_l">{{item.activityName}}</view>
+                  <view class="r_f01_r">¥{{item.amount}}</view>
+                </view>
+                <view class="r_c_f02 clearAfter">有效期至：{{item.endTime}}</view>
+              </view>
+            </view>
+            
+            <view a:if="{{item.status=='0'}}" class="r_bottom">
+              <view class="r_btn yellow">付款</view>
+              <view class="r_btn">取消</view>
+            </view>
+            <view a:elif="{{item.status=='1'}}" class="r_bottom">
+              <view class="r_btn yellow" data-img="{{item.imgicon}}" data-orderId="{{item.orderId}}"  onTap="goUse">去使用</view>
+              <view class="r_btn" data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view>
+            </view>
+            <!-- <view a:a:elif="{{item.status=='5'}}" class="r_bottom">
+              <view class="r_btn yellow">去使用</view>
+              <view class="r_btn" data-orderId="{{item.orderId}}"  onTap="tuikuan">退款</view>
+            </view> -->
+            <!-- <view a:a:elif="{{item.status=='6'}}" class="r_bottom">
+              <view class="r_btn yellow">去使用</view>
+              <view class="r_btn" data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view>
+            </view>
+            <view a:a:elif="{{item.status=='7'}}" class="r_bottom">
+              <view class="r_btn yellow">去使用</view>
+              <view class="r_btn"  data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view>
+            </view> -->
+
+
+
+          </view>
+          <!--  -->
+        </view>
+      </view>
+      <view a:else>
+        <view class="erbox">{{isErbox?erbox02:erbox}}</view>
+      </view>
+    </view>
+    <!-- <view a:elif="{{navListCuIndex=='1'}}">
+      <view a:if="{{list_0.length>0}}">
+        <view a:for="{{list_0}}" key="{{item}}" class="record_ele">
+          
+          <view class="record_in">
+            <view class="r_t clearAfter">
+              <view class="r_t_l clearAfter">
+                <image class="r_t_img" src="../../images/sp2x.png" />
+                <view class="r_t_tt">{{item.ename}}</view>
+              </view>
+              <view class="r_t_r">{{item.status=='0'?'待付款':(item.status=='1')?'可使用':(item.status=='5')?'已消费':(item.status=='6')?'已过期':(item.status=='7')?'已退款':'未知状态'}}</view>
+            </view>
+            <view class="r_con clearAfter">
+              <image class="r_con_img" src="../../images/img2x.jpg" />
+              <view class="r_c_f">
+                <view class="r_c_f01 clearAfter">
+                  <view class="r_f01_l">{{item.activityName}}</view>
+                  <view class="r_f01_r">¥{{item.amount}}</view>
+                </view>
+                <view class="r_c_f02 clearAfter">有效期至：{{item.endTime}}</view>
+              </view>
+            </view>
+            <view a:if="{{item.status=='0'}}" class="r_bottom">
+              <view class="r_btn yellow">付款</view>
+              <view class="r_btn">取消</view>
+            </view>
+            <view a:elif="{{item.status=='1'}}" class="r_bottom">
+              <view class="r_btn yellow"  data-orderId="{{item.orderId}}" onTap="goUse">去使用</view>
+              <view class="r_btn" data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view>
+            </view>
+          </view>
+          
+        </view>
+      </view>
+      <view a:else>
+        <view class="erbox">没有记录</view>
+      </view>
+    </view> -->
+    <view a:elif="{{navListCuIndex=='1'}}">
+      <view a:if="{{list_1.length>0}}">
+        <view a:for="{{list_1}}" key="{{item}}" class="record_ele">
+          <!-- 内容 -->
+          <view class="record_in">
+            <view class="r_t clearAfter">
+              <view class="r_t_l clearAfter">
+                <image class="r_t_img" src="../../images/sp2x.png" />
+                <view class="r_t_tt">{{item.ename}}</view>
+              </view>
+              <view class="r_t_r">{{item.status=='0'?'待付款':(item.status=='1')?'可使用':(item.status=='5')?'已消费':(item.status=='6')?'已过期':(item.status=='7')?'已退款':'未知状态'}}</view>
+            </view>
+            <view class="r_con clearAfter">
+              <image class="r_con_img" src="{{item.imgicon?item.imgicon:'../../images/img2x.jpg'}}" />              
+              <view class="r_c_f">
+                <view class="r_c_f01 clearAfter">
+                  <view class="r_f01_l">{{item.activityName}}</view>
+                  <view class="r_f01_r">¥{{item.amount}}</view>
+                </view>
+                <view class="r_c_f02 clearAfter">有效期至：{{item.endTime}}</view>
+              </view>
+            </view>
+            <view a:if="{{item.status=='0'}}" class="r_bottom">
+              <view class="r_btn yellow">付款</view>
+              <view class="r_btn">取消</view>
+            </view>
+            <view a:elif="{{item.status=='1'}}" class="r_bottom">
+              <view class="r_btn yellow" data-img="{{item.imgicon}}"  data-orderId="{{item.orderId}}" onTap="goUse">去使用</view>
+              <view class="r_btn" data-orderId="{{item.orderId}}"  onTap="tuikuan">退款</view>
+            </view>
+            <!-- <view a:a:elif="{{item.status=='5'}}" class="r_bottom"><view class="r_btn yellow">去使用</view><view class="r_btn" data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view></view> -->
+            <!-- <view a:a:elif="{{item.status=='6'}}" class="r_bottom"><view class="r_btn yellow">去使用</view><view class="r_btn" data-orderId="{{item.orderId}}"  onTap="tuikuan">退款</view></view><view a:a:elif="{{item.status=='7'}}" class="r_bottom"><view class="r_btn yellow">去使用</view><view class="r_btn" data-orderId="{{item.orderId}}"  onTap="tuikuan">退款</view></view> -->
+          </view>
+          <!--  -->
+        </view>
+      </view>
+      <view a:else>
+        <view class="erbox">没有记录</view>
+      </view>
+    </view>
+    <view a:elif="{{navListCuIndex=='2'}}">
+      <view a:if="{{list_5.length>0}}">
+        <view a:for="{{list_5}}" key="{{item}}" class="record_ele">
+          <!-- 内容 -->
+          <view class="record_in">
+            <view class="r_t clearAfter">
+              <view class="r_t_l clearAfter">
+                <image class="r_t_img" src="../../images/sp2x.png" />
+                <view class="r_t_tt">{{item.ename}}</view>
+              </view>
+              <view class="r_t_r">{{item.status=='0'?'待付款':(item.status=='1')?'可使用':(item.status=='5')?'已消费':(item.status=='6')?'已过期':(item.status=='7')?'已退款':'未知状态'}}</view>
+            </view>
+            <view class="r_con clearAfter">
+              <image class="r_con_img" src="{{item.imgicon?item.imgicon:'../../images/img2x.jpg'}}" />
+              <view class="r_c_f">
+                <view class="r_c_f01 clearAfter">
+                  <view class="r_f01_l">{{item.activityName}}</view>
+                  <view class="r_f01_r">¥{{item.amount}}</view>
+                </view>
+                <view class="r_c_f02 clearAfter">有效期至：{{item.endTime}}</view>
+              </view>
+            </view>
+            <view a:if="{{item.status=='0'}}" class="r_bottom">
+              <view class="r_btn yellow">付款</view>
+              <view class="r_btn">取消</view>
+            </view>
+            <view a:elif="{{item.status=='1'}}" class="r_bottom">
+              <view class="r_btn yellow" data-img="{{item.imgicon}}"  data-orderId="{{item.orderId}}" onTap="goUse">去使用</view>
+              <view class="r_btn" data-orderId="{{item.orderId}}"  onTap="tuikuan">退款</view>
+            </view>
+            <!-- <view a:a:elif="{{item.status=='5'}}" class="r_bottom"><view class="r_btn yellow">去使用</view><view class="r_btn"  data-orderId="{{item.orderId}}" data-orderId="{{item.orderId}}" data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view></view> -->
+            <!-- <view a:a:elif="{{item.status=='6'}}" class="r_bottom"><view class="r_btn yellow">去使用</view><view class="r_btn" data-orderId="{{item.orderId}}" data-orderId="{{item.orderId}}"  data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view></view><view a:a:elif="{{item.status=='7'}}" class="r_bottom"><view class="r_btn yellow">去使用</view><view class="r_btn" data-orderId="{{item.orderId}}"  data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view></view> -->
+          </view>
+          <!--  -->
+        </view>
+      </view>
+      <view a:else>
+        <view class="erbox">没有记录</view>
+      </view>
+    </view>
+    <view a:elif="{{navListCuIndex=='3'}}">
+      <view a:if="{{list_6_7.length>0}}">
+              
+        <view a:for="{{list_6_7}}" key="{{item}}" class="record_ele">
+          <!-- 内容 -->
+          <view class="record_in">
+            <view class="r_t clearAfter">
+              <view class="r_t_l clearAfter">
+                <image class="r_t_img" src="../../images/sp2x.png" />
+                <view class="r_t_tt">{{item.ename}}</view>
+              </view>
+              <view class="r_t_r">{{item.status=='0'?'待付款':(item.status=='1')?'可使用':(item.status=='5')?'已消费':(item.status=='6')?'已过期':(item.status=='7')?'已退款':'未知状态'}}</view>
+            </view>
+            <view class="r_con clearAfter">
+              <image class="r_con_img" src="{{item.imgicon?item.imgicon:'../../images/img2x.jpg'}}" />              
+              <view class="r_c_f">
+                <view class="r_c_f01 clearAfter">
+                  <view class="r_f01_l">{{item.activityName}}</view>
+                  <view class="r_f01_r">¥{{item.amount}}</view>
+                </view>
+                <view class="r_c_f02 clearAfter">有效期至：{{item.endTime}}</view>
+              </view>
+            </view>
+            <view a:if="{{item.status=='0'}}" class="r_bottom">
+              <view class="r_btn yellow">付款</view>
+              <view class="r_btn">取消</view>
+            </view>
+            <view a:elif="{{item.status=='1'}}" class="r_bottom">
+              <view class="r_btn yellow" data-img="{{item.imgicon}}"  data-orderId="{{item.orderId}}" onTap="goUse">去使用</view>
+              <view class="r_btn"  data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view>
+            </view>
+            <!-- <view a:a:elif="{{item.status=='5'}}" class="r_bottom"><view class="r_btn yellow">去使用</view><view class="r_btn" data-orderId="{{item.orderId}}"  onTap="tuikuan">退款</view></view> -->
+            <!-- <view a:a:elif="{{item.status=='6'}}" class="r_bottom"><view class="r_btn yellow">去使用</view><view class="r_btn"  data-orderId="{{item.orderId}}" onTap="tuikuan">退款</view></view><view a:a:elif="{{item.status=='7'}}" class="r_bottom"><view class="r_btn yellow">去使用</view><view class="r_btn" data-orderId="{{item.orderId}}"  onTap="tuikuan">退款</view></view> -->
+          </view>
+          <!--  -->
+        </view>
+      </view>
+      <view a:else>
+        <view class="erbox">没有记录</view>
+      </view>
+    </view>
+    
+
+
+  </view>
+</view>

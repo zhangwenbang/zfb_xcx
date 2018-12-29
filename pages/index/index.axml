@@ -1,0 +1,99 @@
+<view class="body " style="width:100%;">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}">
+    <swiper-item>
+      <image class="swiper-item" mode="scaleToFill" src="../../images/banner.jpg"  />
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-item" mode="scaleToFill" src="../../images/banner02.jpg" />
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-item" mode="scaleToFill" src="../../images/banner01.jpg" />
+    </swiper-item>
+  </swiper>
+  <view class="s_city clearAfter" onTap="chooseCity">
+    <image class="dw_img" src="../../images/icon-dw2x.png" />
+    <view class="dw_f">{{dingwei}}</view>
+  </view>
+  <view class="select">
+    <view class="select_flex">
+      <view class="select_ele {{showPicker=='true'?'active':''}}" onTap="allCity"><text>{{select_city}}</text><image class="iconDown" mode="scaleToFill" src="{{showPicker=='true'?'../../images/iconUp.png':'../../images/iconDown.png'}}" /></view>
+      <view class="select_ele {{showService=='true'?'active':''}}"  onTap="allService"><text>{{select_service}}</text><image class="iconDown" mode="scaleToFill" src="{{showService=='true'?'../../images/iconUp.png':'../../images/iconDown.png'}}" /></view>
+      <view class="select_ele {{showDp=='true'?'active':''}}" onTap="allDp"><text>{{select_dp}}</text><image class="iconDown" mode="scaleToFill" src="{{showDp=='true'?'../../images/iconUp.png':'../../images/iconDown.png'}}" /></view>
+    </view>
+    <view class="serviceType"  a:if="{{showService=='true'}}">
+      <!-- <view class="s_t_ele"  data-id="全部服务"  onTap="allSTap">全部服务</view> -->
+      <view class="s_t_ele" a:for="{{allService}}" key="{{item}}"  data-id="{{item.name}}"   data-activityId="{{item.activityId}}"  onTap="allSTap">{{item.name}}</view>
+    </view>
+    <view class="serviceType" a:if="{{showDp=='true'}}">
+      <view class="s_t_ele" a:for="{{allDp}}" key="{{item}}" data-id="{{item.name}}" data-sortType="{{item.sortType}}" onTap="allDpTap">{{item.name}}</view>
+    </view>
+  </view>
+  <view class="pro {{isItems?'':'min_height'}}">
+    <view a:if="{{isItems}}">
+      <view a:for="{{items}}" key="{{item}}" class="car_ele" data-hi="{{item}}" onTap="handleMap">
+        <view class="imgBlock">
+          <image class="img" mode="scaleToFill" src="{{item.imgicon?item.imgicon:'../../images/shlb_pic.png'}}"/>
+        </view>
+        <view class="fontBlock">
+          <view class="fontH">{{item.ename}}
+          </view>
+          <view class="show_p_f clearAfter">
+            <!-- <view class="start">
+              <image class="startEle" src="../../images/xinxin2x.png" />
+              <image class="startEle" src="../../images/xinxin2x.png" />
+              <image class="startEle" src="../../images/xinxin2x.png" />
+              <image class="startEle" src="../../images/xinxin2x.png" />
+              <image class="startEle" src="../../images/xinxin2x.png" />
+            </view>
+            <view class="startText">4.8</view> -->
+            <view class="startText">已售 {{item.ordercount}}</view>
+            <!-- <view class="sale">已售 {{item.ordercount}}</view> -->
+            <view class="salePrice">¥{{item.vipPrice}}</view>
+          </view>
+          <view class="detail">
+            <view class="detail_p">{{item.address}}</view>
+            <view class="distance">{{item.distance}}km</view>
+          </view>
+        
+        </view>
+      </view>
+      <view class="isBottomCss" a:if="{{isBottom}}">
+        <image a:if="{{!isBottomDate}}" class="loadingGif" src="../../images/loading.gif" mode="scaleToFill" />
+        <text>  {{isBottomText}}
+        </text>
+      </view>
+    </view>
+    <view a:else>
+      <view class="erbox">{{isErbox?erbox:erbox02}}</view>
+    </view>
+    <view class="s_tompBg" onTap="close_tompBg" a:if="{{showService=='true'}}"></view>
+    <view class="s_tompBg" onTap="close_DpBg" a:if="{{showDp=='true'}}"></view>
+  </view>
+
+  <!-- 全市 -->
+  <view class="timePompBg" a:if="{{showPicker=='true'}}" >
+  </view>
+  <view class="timePomp" a:if="{{showPicker=='true'}}">
+    <view class="pv-container">
+      <view class="pv-left">
+        <picker-view class="pic_pomp" value="{{value}}" onChange="onChange">
+          <picker-view-column>
+            <view>全市
+            </view>
+            <view a:for="{{allCity}}" key="{{item}}" >
+              {{item.value}}
+            </view>
+           
+          </picker-view-column>
+        </picker-view>
+      </view>
+      <view onTap="ok" class="pv-right pv-right-btn">确定 
+      </view>
+      <view onTap="cancel" class="pv-left  pv-left-btn">取消 
+      </view>
+    </view>
+  </view>
+
+</view>
+
+

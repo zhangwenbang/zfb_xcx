@@ -1,0 +1,10 @@
+require('@alipay/appx-compiler/lib/sjsEnvInit');
+require('./config$');
+require('../../pages/index/index');
+require('../../pages/detail/detail');
+require('../../pages/record_detail/record_detail');
+require('../../pages/pay/pay');
+require('../../pages/login/login');
+require('../../pages/record/record');
+require('../../pages/person/person');
+require('../../pages/pay_success/pay_success');

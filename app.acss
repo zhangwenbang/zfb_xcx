@@ -1,0 +1,13 @@
+page {
+  flex: 1;
+  display: flex;
+  background: #ffffff;
+}
+.clearAfter:after{
+  content:"";
+  font-size: 0rpx;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}

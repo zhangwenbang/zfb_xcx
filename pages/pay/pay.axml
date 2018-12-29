@@ -1,0 +1,10 @@
+<view class="body" style="width:100%;">
+  <view class="orderInfo">
+    <view class="o_p1">应付总额</view>
+    <view class="o_p2">¥{{price}}</view>
+    <view class="o_p3">{{activityName}}</view>
+    <view class="o_p4">{{ename}}</view>
+    <view class="o_p5">*购买后30天内有效，过期自动退款</view>
+  </view>
+  <view class="payBtn" onTap="payBtn">立即支付<text class="tt_p">¥{{price}}</text></view>
+</view>

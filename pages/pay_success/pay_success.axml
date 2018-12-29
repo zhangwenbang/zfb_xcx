@@ -1,0 +1,28 @@
+<view style="width:100%">
+  <view class="h_info clearAfter">
+    <view class="h_left clearAfter">
+      <image class="h_img" src="../../images/icon_suc2x.png" />
+      <text class="h_text">支付成功！</text>
+    </view>
+    <view class="h_right">
+      <image class="h_icon" src="../../images/pic_suc2x.png" />
+    </view>
+  </view>
+  <view class="m_info">
+    <view class="m_title">{{activityName}}</view>
+    <view class="m_shop" onTap="daohan">{{ename}}></view>
+    <view class="m_btn clearAfter">
+      <view class="m_b m_b_left"  onTap="backRecord">查看订单</view>
+      <view class="m_b m_b_right" onTap="backHome">返回首页</view>
+    </view>
+  </view>
+  <view class="qm_info">
+    <view class="qm_red">*向门店工作人员出示二维码进行消费</view>
+    <view class="qm_red">车享家服务需电话预约，否则无法正常消费，请务必知晓</view>
+    <view class="qm_code">
+      <image class="qm_img" src="{{matrixContent}}" />
+    </view>
+    <view class="qm_text">券码：<text class="qm_t">{{orderId}}</text></view>
+    <view class="qm_text">有效期至：<text class="qm_t">{{endTime}}</text></view>
+  </view>
+</view>

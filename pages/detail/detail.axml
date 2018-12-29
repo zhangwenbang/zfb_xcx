@@ -1,0 +1,91 @@
+<view style="width:100%" class="body">
+  <view class="hBlock">
+    <image class="hBimg" src="{{imgicon?imgicon:'../../images/banner_m2x.jpg'}}"  />
+    <view class="h_bg">
+      <view class="h_inner">
+        <view class="h_title">{{ename}}</view>
+        <view class="h_message clearAfter">
+          <!-- <view class="start">
+            <image class="startEle" src="../../images/xinxin2x.png" />
+            <image class="startEle" src="../../images/xinxin2x.png" />
+            <image class="startEle" src="../../images/xinxin2x.png" />
+            <image class="startEle" src="../../images/xinxin2x.png" />
+            <image class="startEle" src="../../images/xinxin2x.png" />
+          </view> -->
+          <!-- <view class="startText">4.8</view>
+          <view class="sale">总订单 {{ordercount}}</view> -->
+          <view class="startText">总订单 {{ordercount}}</view>
+          <!-- <view class="sale">营业时间 08:00-20:00</view> -->
+        </view>
+        <view class="h_nav">
+          <image class="h_BDwei" src="../../images/icon-dw2x01.png" />
+          <view class="h_n_address">{{address}}</view>
+          <view class="h_doahan clearAfter" onTap="daohan">
+            <image class="h_B_left" src="../../images/icon_dh2x.png" />
+            <view class="h_n_m">{{distance}}km</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mShop">
+    <view class="m_h">门店服务</view>
+    <view class="m_wrap">
+      <view class="m_ele"  a:for="{{shopActivities}}" key="{{item}}" class="car_ele" data-activityId="{{item.activityId}}"  data-index="{{index}}" onTap="handleSelcet">
+        <view class="m_ele_con">
+          <image class="m_ele_img" src="{{index==sASelect?'../../images/icon_select22x.png':'../../images/icon_select12x.png'}}" />
+          <view class="m_e_title">{{item.activityName}}</view>
+          <view class="m_e_con">{{item.activityDesc}}</view>
+          <view class="m_e_sale">
+            <!-- <text>评价 4.8</text>
+            <text> </text> -->
+            <!-- <text>已售 {{ordercount}}</text></view> -->
+          <view class="m_price">
+            <view class="m_p_new">¥{{item.price}}</view>
+            <view class="m_p_old">¥{{item.yprice}}</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- <view class="m_ele">
+        <view class="m_ele_con">
+          <image class="m_ele_img" src="../../images/icon_select22x.png" />
+          <view class="m_e_title">标准洗车-五座轿车</view>
+          <view class="m_e_con">车身水蜡泡沫清洗，轮胎轮毂清洗上光，发动机表面除尘，车内饰清洗（含座椅），底盘清洗，铁粉尽除污渍</view>
+          <view class="m_e_sale">
+            <text>评价 4.8</text>
+            <text></text>
+            <text>已售 15</text>
+          </view>
+          <view class="m_price">
+            <view class="m_p_new">¥25</view>
+            <view class="m_p_old">¥30</view>
+          </view>
+        </view>
+      </view> -->
+
+
+
+
+
+    </view>
+  </view>
+  <view class="bottom_wrap clearAfter">
+    <view class="bo_left">
+      <view>
+        <text class="pr_now">¥{{shopActivities[sASelect].price}}</text>
+        <text class="pr_old">¥{{shopActivities[sASelect].yprice}}</text>
+      </view>
+      <view class="pr_text">{{shopActivities[sASelect].activityName}}</view>
+    </view>
+    <view class="bo_right clearAfter">
+      <view class="bo_r_block" onTap="makePhoneCall">
+        <image class="bo_r_img" src="../../images/btn_zx2x.png" />
+      </view>
+      <view class="bo_r_pay" onTap="pay">
+        去结算
+      </view>
+    </view>
+  </view>
+</view>
+

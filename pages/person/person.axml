@@ -1,0 +1,65 @@
+<view style="width:100%" class="body">
+  <view class="userInfo">
+    <image class="uImg"   onTap="loginPage" src="{{isLogin?'../../images/icon-tx-wmm2x.png':'../../images/icon-tx-wdl2x.png'}}" />
+    <view a:if="{{isLogin==false}}" class="u_noLogin"  onTap="loginPage">未登录</view>
+    <view a:else>
+      <!-- <view class="u_changeName clearAfter" onTap="tapname"><text class="u_mshow">{{userName?userName:"请编辑昵称"}}</text><image class="u_changIcon" src="../../images/xiugai2x.png" /></view> -->
+      <view class="u_tel">{{userTel}}</view>
+    </view>
+  </view>
+  <view class="order">
+    <view class="o_order">
+      <view class="o_h clearAfter">
+        <view class="o_h_l">我的订单</view>
+        <view class="o_h_r" onTap="orderList">查看全部订单 ></view>
+      </view>
+      <view class="o_con clearAfter">
+        <!-- <view class="o_ele">
+          <image class="o_ele_img" src="../../images/icon-dfk2x.png" />
+          <view class="o_t">待付款</view>
+        </view> -->
+        <view class="o_ele" data-index="1" onTap="orderListMore">
+          <image class="o_ele_img" src="../../images/icon-ksy2x.png" />
+          <view class="o_t">可使用</view>
+        </view>
+        <view class="o_ele" data-index="2"  onTap="orderListMore">
+          <image class="o_ele_img" src="../../images/icon-dpj2x.png" />
+          <view class="o_t">已完成</view>
+        </view>
+        <view class="o_ele" data-index="3"  onTap="orderListMore">
+          <image class="o_ele_img" src="../../images/icon-tk2x.png" />
+          <view class="o_t">退款/取消</view>
+        </view>
+
+
+
+        
+      </view>
+    </view>
+  </view>
+  <view class="hD">
+    <view class="hD_order">
+      <view class="hD_ele clearAfter"  onTap="makePhoneCall">
+        <view class="hD_e_left clearAfter">
+          <image class="telIcon" src="../../images/icon-kfdh2x.png" />   <text class="h_text">客服电话</text>
+        </view>
+        <view class="hD_e_right clearAfter">
+          <text>400-880-1768 ></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="loginout" a:if="{{isLogin}}" onTap="loginout">退出登录</view>
+  <view class="changeName" a:if="{{isChangeName}}">
+    <view class="cN_bg"></view>
+    <view class="cN_con">
+      <view class="cN_title">修改昵称</view>
+      <input class="cN_input" onInput="bindKeyInput" placeholder="请输入新昵称" />
+      <view class="cN_ts {{inputValueBool?'':'error'}}">*昵称长度应为2-6个字符</view>
+      <view class="cN_btn clearAfter">
+        <view class="cN_b_l" onTap="changeCancel">取消</view>
+        <view class="cN_b_r" onTap="changeSure">确认</view>
+      </view>
+    </view>
+  </view>
+</view>
